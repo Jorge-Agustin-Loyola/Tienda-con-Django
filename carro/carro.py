@@ -2,6 +2,7 @@ class Carro:
     def __init__(self, request): #Este método se llama automáticamente cuando se crea una nueva instancia (objeto) de la clase. El constructor se utiliza para inicializar los atributos de la instancia.
         self.request=request
         self.session=request.session
+        
         carro=self.session.get("carro") # session es un diccionario, esta funcion devolvera un valor asociado a la clave "carro"
         if not carro:
             carro=self.session["carro"]={}
