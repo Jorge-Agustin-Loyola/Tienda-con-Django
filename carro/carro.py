@@ -21,6 +21,7 @@ class Carro:
             for key, value in self.carro.items(): #Recorrer pares clave-valor: Utiliza el método items() para obtener una lista de tuplas que contienen los pares clave-valor, luego puedes recorrer esta lista: 
                 if key==str(producto.id):
                     value["cantidad"]=value["cantidad"]+1 #como el value en el diccionario "carro" es otro diccionario cambiamos el valor de la clave cantidad en el diccionario "value" es decir value["cantidad"]=valor nuevo
+                    value["precio"]=float(value["precio"])+producto.precio
                     break # para que una vez encontrado no siga recorriendo los productos
         self.guardar_carro()
     
@@ -38,6 +39,7 @@ class Carro:
         for key, value in self.carro.items():
             if key == str(producto.id):
                 value["cantidad"] = value["cantidad"]-1
+                value["precio"]=float(value["precio"])-producto.precio
                 if value["cantidad"]<1:
                     self.eliminar(producto)
                 break
