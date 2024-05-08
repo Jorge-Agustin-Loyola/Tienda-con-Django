@@ -1,1 +1,1 @@
-# Tienda-con-Django
+# Tienda-con-Django (Cambiar a rama master)
